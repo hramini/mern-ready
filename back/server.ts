@@ -1,5 +1,4 @@
 import express, { json, urlencoded } from 'express';
-import { connect } from 'mongoose';
 import { join } from 'path';
 import { apiRouter } from './router/api-router';
 import { webRouter } from './router/web-router';
@@ -18,7 +17,7 @@ app.listen(port, async (): Promise<void> => {
   console.log(`Project is listening to ${port}`);
 
   try {
-    await connect(process.env.MONGO_CONNECTION_STRING ?? '');
+    // await connect(process.env.MONGO_CONNECTION_STRING ?? '');
 
     console.log('The application is connected to database successfully');
   } catch (error) {
